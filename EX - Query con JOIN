@@ -42,3 +42,32 @@ JOIN `departments`ON `departments`.`id` = `degrees`.`department_id`
 ORDER BY `students`.`surname` ASC;
 
 Query 5:
+SELECT 
+	`degrees`.`name`,
+	`courses`.`name`,
+    `teachers`.`surname`,
+    `teachers`.`name`
+    
+FROM `degrees` 
+
+JOIN `courses` ON `courses`.`degree_id` = `degrees`.`id`
+JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id`
+JOIN`teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id`
+
+WHERE 1;
+
+Query 6: 
+SELECT 
+	`teachers`.`surname`,
+    `teachers`.`name`,
+    `departments`.`name`
+    
+    
+FROM `teachers`
+JOIN `course_teacher` ON `course_teacher`.`teacher_id` = `teachers`.`id`
+JOIN `courses` ON `courses`.`id` = `course_teacher`.`course_id`
+JOIN `degrees` ON `degrees`.`id` = `courses`.`degree_id`
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+
+WHERE `departments`.`name` = "Dipartimento di Matematica"  
+GROUP BY `teachers`.`id`;
