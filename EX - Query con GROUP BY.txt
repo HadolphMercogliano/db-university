@@ -17,3 +17,11 @@ JOIN `exam_student` ON `exam_student`.`exam_id` = `exams`.`id`
 JOIN `courses` ON `courses`.`id` = `exams`.`course_id`
 
 GROUP BY `exam_student`.`exam_id`;
+
+Query 4:
+SELECT COUNT(*), `departments`.`name`
+FROM `degrees`
+
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+
+GROUP BY `departments`.`id`;
