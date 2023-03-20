@@ -1,7 +1,7 @@
 Query 1:
 SELECT * 
 FROM `students` 
-WHERE YEAR(`date_of_birth`) ="1990";
+WHERE YEAR(`date_of_birth`) =1990;
 
 Query 2:
 SELECT * 
@@ -27,15 +27,14 @@ AND `hour`>"14:00:00";
 Query 6:
 SELECT * 
 FROM `degrees` 
-WHERE `level` 
-LIKE "magistrale"
+WHERE `level` = "magistrale"
 
 Query 7:
-SELECT * 
+SELECT COUNT(*) AS "numero dipartimenti"
 FROM `departments` 
 WHERE 1;
 
 Query 8:
-SELECT * 
+SELECT COUNT(*) AS "insegnanti senza telefono" 
 FROM `teachers` 
 WHERE `phone` IS NULL;
