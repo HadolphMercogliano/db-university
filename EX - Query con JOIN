@@ -1,0 +1,19 @@
+Query 1:
+SELECT 
+    `degrees`.`name`,
+	`students`.`id`,
+    `students`.`name`,
+    `students`.`surname`
+    
+FROM `students` 
+JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+WHERE `degrees`.`name` =  "Corso di Laurea in Economia";
+
+Query 2:
+SELECT 
+	`degrees`.`name`,
+	`degrees`.`id`
+    
+FROM `degrees`
+JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+WHERE `departments`.`name` = "Dipartimento di Neuroscienze";
