@@ -16,7 +16,8 @@ SELECT
     
 FROM `degrees`
 JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
-WHERE `departments`.`name` = "Dipartimento di Neuroscienze";
+WHERE `departments`.`name` = "Dipartimento di Neuroscienze"
+AND `departments`.`level` = "magistrale"
 
 Query 3:
 SELECT `courses`.`name` 
@@ -39,7 +40,7 @@ FROM `students`
 JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
 JOIN `departments`ON `departments`.`id` = `degrees`.`department_id`
 
-ORDER BY `students`.`surname` ASC;
+ORDER BY `students`.`surname`,`students`.`name` ASC;
 
 Query 5:
 SELECT 

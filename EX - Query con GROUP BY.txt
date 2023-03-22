@@ -4,7 +4,7 @@ FROM `students`
 GROUP BY YEAR(`enrolment_date`);
 
 Query 2:
-SELECT `office_address`, COUNT(*) 
+SELECT `office_address`, COUNT(*) AS "numero_insegnanti"
 FROM `teachers`
 GROUP BY `office_address`;
 
